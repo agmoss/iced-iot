@@ -1,9 +1,9 @@
 body {
-    background-color: #858585 !important; 
+    background-color: #ffffff !important; 
     font-family: 'Lato', sans-serif;
 }
 .navbar{
-   background-color: #ab3939 !important;
+   background-color: #3957ab !important;
    box-shadow :0 8px 14px 0 rgba(123, 120, 120, 0.22);
 }
 .navbar-brand{
@@ -18,7 +18,8 @@ body {
 }
 .custom-card{
     border: 0 ;
-    box-shadow: 0px 2px 4px #bdbdbd73;
+    box-shadow: 0px 2px 4px #53535373;
+    background-color: #d3d3d3c2 !important;
 }
 .card-body img {
     width: 25px;
