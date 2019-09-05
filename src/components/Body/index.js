@@ -36,7 +36,7 @@ class Body extends React.Component {
                 },
                 colors: ['#3957ab', '#77B6EA'],
                 dataLabels: {
-                    enabled: false
+                    enabled: true
                 },
                 stroke: {
                     curve: 'straight'
@@ -53,6 +53,16 @@ class Body extends React.Component {
                 },
                 xaxis: {
                     type: 'datetime'
+                },
+                tooltip: {
+                    enabled: false, //TODO: Fix this
+                    followCursor: true,
+                    fixed: {
+                        enabled: false,
+                        position: 'topRight',
+                        offsetX: 0,
+                        offsetY: 0,
+                    },
                 }
             },
             series: [{
@@ -71,12 +81,10 @@ class Body extends React.Component {
         this.setState({
             dropdownOpen: !this.state.dropdownOpen,
             currentFacility: event.target.innerText
-        });
+        })
     }
 
     componentDidMount() {
-
-        console.log(this.state.currentFacility);
 
         this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/wind?last=true', 'wind');
         this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/energy?last=true', 'energy');
@@ -101,6 +109,7 @@ class Body extends React.Component {
 
         }, 2000);
 
+        // TODO: Make the tooltip stay 
         setInterval(() => {
 
             var now = new Date();
@@ -110,7 +119,7 @@ class Body extends React.Component {
 
             this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/energy/gte/' + oneHourAgo, 'energyTs');
 
-        }, 10000);
+        }, 2000);
     }
 
 
