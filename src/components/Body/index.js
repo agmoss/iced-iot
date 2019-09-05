@@ -36,10 +36,17 @@ class Body extends React.Component {
                 },
                 colors: ['#3957ab', '#77B6EA'],
                 dataLabels: {
-                    enabled: true
+                    enabled: false
                 },
                 stroke: {
-                    curve: 'straight'
+                    curve: 'smooth'
+                },
+                animations: {
+                    enabled: true,
+                    easing: 'linear',
+                    dynamicAnimation: {
+                        speed: 1000
+                    }
                 },
                 title: {
                     text: 'Wattage',
@@ -55,7 +62,7 @@ class Body extends React.Component {
                     type: 'datetime'
                 },
                 tooltip: {
-                    enabled: false, //TODO: Fix this
+                    enabled: true, //TODO: Fix this
                     followCursor: true,
                     fixed: {
                         enabled: false,
@@ -81,24 +88,42 @@ class Body extends React.Component {
         this.setState({
             dropdownOpen: !this.state.dropdownOpen,
             currentFacility: event.target.innerText
+        }, ()=> {
+
+            // Re-render the chart
+            clearInterval(this.chartInterval);
+            this.energyLineChart();
+            this.startUpdatingData();
+
         })
     }
 
-    componentDidMount() {
-
-        this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/wind?last=true', 'wind');
-        this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/energy?last=true', 'energy');
-        this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/tank?last=true', 'tank');
-
+    // Create the wattage time series chart
+    energyLineChart(){
         var now = new Date();
         now.setHours(now.getHours() - 1);
         var oneHourAgo = now.getTime().toString();
         this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/energy/gte/' + oneHourAgo, 'energyTs');
+    }
 
+
+    componentDidMount() {
+
+        // Card data
+        this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/wind?last=true', 'wind');
+        this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/energy?last=true', 'energy');
+        this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/tank?last=true', 'tank');
+
+        // Chart data
+        this.energyLineChart();
+
+        // Realtime method
         this.startUpdatingData();
 
     }
 
+
+    chartInterval = null;
     startUpdatingData() {
 
         setInterval(() => {
@@ -109,17 +134,14 @@ class Body extends React.Component {
 
         }, 2000);
 
-        // TODO: Make the tooltip stay 
-        setInterval(() => {
+        this.chartInterval = setInterval(() => {
 
             var now = new Date();
             now.setHours(now.getHours() - 1);
-
             var oneHourAgo = now.getTime().toString();
-
             this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/energy/gte/' + oneHourAgo, 'energyTs');
 
-        }, 2000);
+        }, 30000);
     }
 
 
@@ -152,6 +174,7 @@ class Body extends React.Component {
                     var data = timeSeries(d);
 
                     ApexCharts.exec('realtime', 'updateSeries', [{
+                        name:"Watts",
                         data: data
                     }])
                 }
