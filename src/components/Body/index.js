@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import ReactApexChart from 'react-apexcharts';
 import ApexCharts from 'apexcharts';
@@ -8,8 +7,9 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import KpiCard from '../kpiCard';
 import timeSeries from '../../functions/timeSeries';
 
+
 var data = [];
-class Body extends React.Component {
+class Body extends Component {
     constructor(props) {
         super(props);
         this.toggle = this.toggle.bind(this);
@@ -88,7 +88,7 @@ class Body extends React.Component {
         this.setState({
             dropdownOpen: !this.state.dropdownOpen,
             currentFacility: event.target.innerText
-        }, ()=> {
+        }, () => {
 
             // Re-render the chart
             clearInterval(this.chartInterval);
@@ -99,7 +99,7 @@ class Body extends React.Component {
     }
 
     // Create the wattage time series chart
-    energyLineChart(){
+    energyLineChart() {
         var now = new Date();
         now.setHours(now.getHours() - 1);
         var oneHourAgo = now.getTime().toString();
@@ -154,7 +154,7 @@ class Body extends React.Component {
 
                 if (prop === 'wind') {
                     this.setState({
-                        [prop]: d.data.mph
+                        [prop]: d.data
                     });
                 }
 
@@ -166,7 +166,7 @@ class Body extends React.Component {
 
                 if (prop === 'tank') {
                     this.setState({
-                        [prop]: d.data.liters
+                        [prop]: d.data
                     });
                 }
 
@@ -174,7 +174,7 @@ class Body extends React.Component {
                     var data = timeSeries(d);
 
                     ApexCharts.exec('realtime', 'updateSeries', [{
-                        name:"Watts",
+                        name: "Watts",
                         data: data
                     }])
                 }
@@ -202,9 +202,9 @@ class Body extends React.Component {
 
                 <div className="col-12 mb-3">
                     <div className="card-deck custom-card-deck">
-                        <KpiCard header="Wind" src={'/wind.png'} alt="-" label="(mPh)" value={this.state.wind} />
-                        <KpiCard header="Energy" src={'/energy.png'} alt="-" label="(Watts)" value={this.state.energy} />
-                        <KpiCard header="Tank" src={'/tank.png'} alt="-" label="(liters)" value={this.state.tank} />
+                        <KpiCard header="Wind" src={''} data={[{ "label": "(mPh)", "value": this.state.wind.mph }, { "label": "(Direction)", "value": this.state.wind.direction }]} alt="-" />
+                        <KpiCard header="Energy" src={''} data={[{ "label": "(watts)", "value": this.state.energy }, { "label": "(State)", "value": "Normal" }]} alt="-" label1="(Watts)" value1={this.state.energy} />
+                        <KpiCard header="Tank" src={''} data={[{ "label": "(Liters)", "value": this.state.tank.liters }, { "label": "(ph)", "value": this.state.tank.pH }]} alt="-" />
                     </div>
                 </div>
 
