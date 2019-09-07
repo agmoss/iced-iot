@@ -12,7 +12,7 @@ class Navig extends React.Component {
 
             <Navbar collapseOnSelect expand="lg">
                 <Navbar.Brand href="#home">Dam</Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav.Link href="#features">Features</Nav.Link>

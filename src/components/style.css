@@ -1,18 +1,16 @@
 body {
-    font-family: 'Lato', sans-serif;
-    background: rgb(23, 32, 46) !important;
+  font-family: 'Lato', sans-serif;
+  background: rgb(23, 32, 46) !important;
 }
 
 .chart-container{
   background-color:rgb(32, 42, 59) 
- 
 }
 
 .card-header {
   color: yellow;
 }
 
- /* text styles */
 .text-main {
   color: #e5ff00!important;
 }
@@ -24,69 +22,70 @@ body {
   color: yellow;
 }
 
- .dark-text {
-    color: rgb(67, 68, 86);
-  }
+.dark-text {
+  color: rgb(67, 68, 86);
+}
   
-  .dark-text-light {
-    color: rgb(128, 145, 171);
-  }
+.dark-text-light {
+  color: rgb(128, 145, 171);
+}
   
-  .light-text {
-    /* color: rgb(193, 204, 222); */
-    color: rgb(255, 255, 255);
-  }
+.light-text {
+  color: rgb(255, 255, 255);
+}
 
-  .card-dark {
-    background: rgb(32, 42, 59) !important;
-  }
+.card-dark {
+  background: rgb(32, 42, 59) !important;
+}
   
-
-  .map-card{
-      height:350px;
-  }
+.map-card{
+  height:350px;
+  max-height: 350px;
+}
   
-
 .navbar {
-    background:rgb(115, 255, 0);
-    color:white !important;
-  }
+  background:rgb(115, 255, 0);
+  color:white !important;
+}
   
 .navitem {
-    color:white !important;
-  }
+  color:white !important;
+}
 
 .dropdown{
-    padding-top: 15px;
-    padding-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .container-fluid {
-    width: 90% !important;
-  }
+  width: 90% !important;
+}
 
 .font-weight-700{
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .card-body img {
-    width: 25px;
-    opacity :0.2;   
+  width: 25px;
+  opacity :0.2;   
 }
+
 .card-deck > .card:nth-child(2) .card-body > img{
-    width:20px;
+  width:20px;
 }
+
 @media (min-width:576px){
-    .custom-card-deck .card:last-child{
-        margin-right: 15px !important;
-    }
+  .custom-card-deck .card:last-child{
+      margin-right: 15px !important;
+  }
 }
+
 @media (max-width:575px){
-    .mt-xs-4 {
-        margin-top: 2rem !important;
-    }
-    .mb-xs-4 {
-        margin-bottom: 2rem !important;
-    }
+  .mt-xs-4 {
+    margin-top: 2rem !important;
+  }
+  .mb-xs-4 {
+    margin-bottom: 2rem !important;
+  }
 }
 
