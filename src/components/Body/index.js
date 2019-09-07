@@ -32,7 +32,10 @@ class Body extends Component {
                     id: 'realtime',
                     zoom: {
                         enabled: false
-                    }
+                    },
+                    toolbar: {
+                        show: false,
+                      },
                 },
                 colors: ['#3957ab', '#77B6EA'],
                 dataLabels: {
@@ -185,20 +188,22 @@ class Body extends Component {
         return (
             <div className="row mt-5 mt-xs-4">
 
-                <div className="col-3">
-                    <div className="card custom-card mb-5 mb-xs-4">
-                        <div className="card-body">
-                            <DropdownButton id="dropdown-basic-button" title="Facility">
-                                <Dropdown.Item onClick={this.selectFacility}>facility_01</Dropdown.Item>
-                                <Dropdown.Item onClick={this.selectFacility}>facility_02</Dropdown.Item>
-                            </DropdownButton>
-                        </div>
-                        <div>
-                            <p>Facility: {this.state.currentFacility}</p>
-                        </div>
+                <div className="col-12">
+
+                    <div className="text-muted text-left">
+                        Facility: {this.state.currentFacility}
+                    </div>
+
+                    <div className="text-left">
+                        <DropdownButton id="dropdown-basic-button dropdown-menu-right pull-right" title=" Facility ">
+                            <Dropdown.Item onClick={this.selectFacility}>facility_01</Dropdown.Item>
+                            <Dropdown.Item onClick={this.selectFacility}>facility_02</Dropdown.Item>
+                        </DropdownButton>
                     </div>
 
                 </div>
+
+
 
                 <div className="col-12 mb-3">
                     <div className="card-deck custom-card-deck">

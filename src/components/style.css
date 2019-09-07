@@ -13,6 +13,11 @@ body {
     color: rgba(255,255,255,0.8);
 }
 
+.dropdown{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 .font-weight-700{
     font-weight: 700;
 }
