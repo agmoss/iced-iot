@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import Card, { CardSubtitle } from 'react-bootstrap/Card'
 import 'status-indicator/styles.css'
-
 import '../dot.css'
 
 class StatusCard extends Component {
@@ -11,14 +11,17 @@ class StatusCard extends Component {
 
     render() {
         return (
-            <div className="card custom-card mb-5 mb-xs-4">
-                <div className='card-header'>
-                    {this.props.facility}
-                </div>
-                <div className="card-body">
-                    <status-indicator active pulse></status-indicator>
-                </div>
-            </div>
+
+            <Card className="card-dark mb-5 mb-xs-4">
+                <Card.Header>{this.props.facility}</Card.Header>
+                <Card.Body>
+                    <Card.Title><status-indicator positive pulse></status-indicator></Card.Title>
+                    <Card.Text>
+                        Energy, Wind, and Tank Monitoring
+                    </Card.Text>
+                </Card.Body>
+                <Card.Footer className="text-muted">60 second frequency</Card.Footer>
+            </Card>
         )
     }
 }

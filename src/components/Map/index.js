@@ -14,47 +14,15 @@ import FusionMaps from 'fusioncharts/fusioncharts.maps';
 // Step 5 - Including the map definition file
 import World from 'fusioncharts/maps/fusioncharts.world';
 
-
 // Step 6 - Including the theme as fusion
 import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+
+import Card from 'react-bootstrap/Card'
 
 // Step 7 - Adding the map as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, FusionMaps, World, FusionTheme);
 
-// Step 8 - Creating the JSON object to store the map configurations
-var chartConfigs = {
-    type: 'World',
-    // width: '800',
-    // height: '550',
-    dataFormat: 'json',
-    dataSource: {
-        // Map Configuration
-        "chart": {
-            "caption": "Facility Location",
-            "theme": "fusion",
-            "markerBgColor": "#FF0000",
-            "markerRadius": "10",
-            "showMarkerLabels": "1",
-            "entityFillColor": "#A8A8A8",
-            "entityFillHoverColor": "#E5E5E9"
-        },
-        "colorrange": {
-            "gradient": 0,
-        },
-        "markers": {
-            "items": [{
-                "id": "lon",
-                "shapeid": "triangle",
-                "x": "340.23",
-                "y": "125.9",
-                "label": "LHR",
-                "tooltext": "Heathrow International Airport {br}IACL Code : EGLL",
-                "labelpos": "left"
-            }]
-        }
-    }
-}
-// Step 10 - Creating the DOM element to pass the react-fusioncharts component
+
 class Map extends React.Component {
 
     constructor(props) {
@@ -67,19 +35,20 @@ class Map extends React.Component {
         if (this.props.facility === "facility_01") {
             chartConfigs = {
                 type: 'World',
-                // width: '800',
-                // height: '550',
+                width: "100%",
+                renderAt: 'chart-container',
+                containerBackgroundOpacity: "0",
                 dataFormat: 'json',
                 dataSource: {
                     // Map Configuration
                     "chart": {
-                        "caption": "Facility Location",
                         "theme": "fusion",
                         "markerBgColor": "#FF0000",
                         "markerRadius": "10",
                         "showMarkerLabels": "1",
-                        "entityFillColor": "#A8A8A8",
-                        "entityFillHoverColor": "#E5E5E9"
+                        "entityFillHoverColor": "#E5E5E9",
+                        "bgcolor": "#3366ff",
+                        "bgalpha": "0"
                     },
                     "colorrange": {
                         "gradient": 0,
@@ -88,8 +57,8 @@ class Map extends React.Component {
                         "items": [{
                             "id": "lon",
                             "shapeid": "triangle",
-                            "x": "51.05011",
-                            "y": "-114.08529",
+                            "x": "110",
+                            "y": "130",
                             "label": "YYC",
                             "tooltext": "Calgary Facility {br}IoT Facility",
                             "labelpos": "left"
@@ -99,22 +68,22 @@ class Map extends React.Component {
             }
         } else {
 
-
-            var chartConfigs = {
+            chartConfigs = {
                 type: 'World',
-                // width: '800',
-                // height: '550',
+                width: "100%",
+                renderAt: 'chart-container',
+                containerBackgroundOpacity: "0",
                 dataFormat: 'json',
                 dataSource: {
                     // Map Configuration
                     "chart": {
-                        "caption": "Facility Location",
                         "theme": "fusion",
                         "markerBgColor": "#FF0000",
                         "markerRadius": "10",
                         "showMarkerLabels": "1",
-                        "entityFillColor": "#A8A8A8",
-                        "entityFillHoverColor": "#E5E5E9"
+                        "entityFillHoverColor": "#E5E5E9",
+                        "bgcolor": "#3366ff",
+                        "bgalpha": "0"
                     },
                     "colorrange": {
                         "gradient": 0,
@@ -123,15 +92,14 @@ class Map extends React.Component {
                         "items": [{
                             "id": "lon",
                             "shapeid": "triangle",
-                            "x": "340.23",
-                            "y": "125.9",
-                            "label": "LHR",
-                            "tooltext": "Heathrow International Airport {br}IACL Code : EGLL",
+                            "x": "190",
+                            "y": "140",
+                            "label": "YYZ",
+                            "tooltext": "Toronto Facility {br}IoT Facility",
                             "labelpos": "left"
                         }]
                     }
                 }
-
             }
 
         }
@@ -141,14 +109,18 @@ class Map extends React.Component {
     }
 
 
-
     render() {
 
         var configs = this.createConfigs();
 
         return (
-            <ReactFC
-                {...configs} />
+
+            <Card className="card-dark mb-5 mb-xs-4">
+                <Card.Header>Facility Location</Card.Header>
+                <Card.Body>
+                    <ReactFC {...configs} />
+                </Card.Body>
+            </Card>
         );
 
     }

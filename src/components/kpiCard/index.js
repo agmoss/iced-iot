@@ -10,7 +10,7 @@ class KpiCard extends Component {
         const value = typeof parseInt(pair.value) === 'number' && !isNaN(parseInt(pair.value)) ? Math.round(parseInt(pair.value)) : pair.value;
 
         return <React.Fragment>
-            <h2 className="mb-1 text-primary">{value}</h2>
+            <h2 className="text-main mb-1">{value}</h2>
             <p className="card-text"><small className="text-muted">{pair.label}</small></p>
         </React.Fragment>
 
@@ -24,10 +24,10 @@ class KpiCard extends Component {
 
     render() {
         return (
-            <div className="card mr-0 custom-card">
+            <div className="card card-dark">
                 <div className="card-body">
                     <img src={this.props.src} alt={this.props.src} className="img-responsive float-right" />
-                    <h6 className="card-title mb-4 ">{this.props.header} </h6>
+                    <h6 className="card-title mb-4">{this.props.header} </h6>
                     {this.createPairs(this.props.data)}
                 </div>
             </div>
