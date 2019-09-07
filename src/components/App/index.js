@@ -5,6 +5,7 @@ import Header from '../Header';
 import Body from '../Body';
 import "bootstrap/dist/css/bootstrap.css";
 import '../style.css';
+import Container from 'react-bootstrap/Container';
 
 
 class App extends Component {
@@ -15,11 +16,9 @@ class App extends Component {
 
 			<div className="App">
 				<Header branding="IoT Dashboard" />
-				<div className="container">
-
+				<Container fluid>
 					<Body />
-				</div>
-
+				</Container>
 			</div>
 		);
 	}

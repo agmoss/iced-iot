@@ -5,7 +5,13 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
 import KpiCard from '../kpiCard';
+import Map from '../Map';
+import StatusCard from '../StatusCard';
 import timeSeries from '../../functions/timeSeries';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 var data = [];
@@ -35,7 +41,7 @@ class Body extends Component {
                     },
                     toolbar: {
                         show: false,
-                      },
+                    },
                 },
                 colors: ['#3957ab', '#77B6EA'],
                 dataLabels: {
@@ -186,44 +192,59 @@ class Body extends Component {
 
     render() {
         return (
-            <div className="row mt-5 mt-xs-4">
 
-                <div className="col-12">
+            <Container fluid>
 
-                    <div className="text-muted text-left">
-                        Facility: {this.state.currentFacility}
-                    </div>
+                <Row>
+                    <div className="col-12 mb-3">
+                        <div className="text-muted text-left">
+                            Facility: {this.state.currentFacility}
+                        </div>
 
-                    <div className="text-left">
-                        <DropdownButton id="dropdown-basic-button dropdown-menu-right pull-right" title=" Facility ">
-                            <Dropdown.Item onClick={this.selectFacility}>facility_01</Dropdown.Item>
-                            <Dropdown.Item onClick={this.selectFacility}>facility_02</Dropdown.Item>
-                        </DropdownButton>
-                    </div>
-
-                </div>
-
-
-
-                <div className="col-12 mb-3">
-                    <div className="card-deck custom-card-deck">
-                        <KpiCard header="Wind" src={''} data={[{ "label": "(mPh)", "value": this.state.wind.mph }, { "label": "(Direction)", "value": this.state.wind.direction }]} alt="-" />
-                        <KpiCard header="Energy" src={''} data={[{ "label": "(watts)", "value": this.state.energy }, { "label": "(State)", "value": "Normal" }]} alt="-" label1="(Watts)" value1={this.state.energy} />
-                        <KpiCard header="Tank" src={''} data={[{ "label": "(Liters)", "value": this.state.tank.liters }, { "label": "(ph)", "value": this.state.tank.pH }]} alt="-" />
-                    </div>
-                </div>
-
-                <div className="col-12">
-                    <div className="card custom-card mb-5 mb-xs-4">
-                        <div className="card-body">
-                            <div id="chartReal">
-                                <ReactApexChart options={this.state.options} series={this.state.series} type="line" height="350" />
-                            </div>
+                        <div className="text-left">
+                            <DropdownButton id="dropdown-basic-button dropdown-menu-right pull-right" title=" Facility ">
+                                <Dropdown.Item onClick={this.selectFacility}>facility_01</Dropdown.Item>
+                                <Dropdown.Item onClick={this.selectFacility}>facility_02</Dropdown.Item>
+                            </DropdownButton>
                         </div>
                     </div>
-                </div>
+                </Row>
 
-            </div>
+                <Row>
+
+                    <div className="col-9 mb-3">
+
+                        <div className="card-deck custom-card-deck mb-5 mb-xs-4">
+                            <KpiCard header="Wind" src={''} data={[{ "label": "(mPh)", "value": this.state.wind.mph }, { "label": "(Direction)", "value": this.state.wind.direction }]} alt="-" />
+                            <KpiCard header="Energy" src={''} data={[{ "label": "(watts)", "value": this.state.energy }, { "label": "(State)", "value": "Normal" }]} alt="-" label1="(Watts)" value1={this.state.energy} />
+                            <KpiCard header="Tank" src={''} data={[{ "label": "(Liters)", "value": this.state.tank.liters }, { "label": "(ph)", "value": this.state.tank.pH }]} alt="-" />
+                        </div>
+
+                        <div className="card custom-card mb-5 mb-xs-4">
+                            <div className="card-body">
+                                <div id="chartReal">
+                                    <ReactApexChart options={this.state.options} series={this.state.series} type="line" height="350" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div className="col-3 mb-3">
+
+                        <StatusCard facility={this.state.currentFacility} />
+
+                        <div className="card custom-card mb-5 mb-xs-4">
+                            <div className="card-body">
+                                <Map facility={this.state.currentFacility} />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </Row>
+
+            </Container>
         )
     }
 }
