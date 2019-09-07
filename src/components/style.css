@@ -1,60 +1,96 @@
 body {
-    background-color: #ffffff !important; 
-    font-family: 'Lato', sans-serif;
+  font-family: 'Lato', sans-serif;
+  background: rgb(23, 32, 46) !important;
 }
-.navbar{
-   background-color: #3957ab !important;
-   box-shadow :0 8px 14px 0 rgba(123, 120, 120, 0.22);
+
+.logo {
+  font-family: 'Vampiro One', cursive;
+  font-size: 25px !important;
 }
-.navbar-brand{
-    color: #fff;
+
+.chart-container{
+  background-color:rgb(32, 42, 59) 
 }
-.navbar-brand:hover{
-    color: rgba(255,255,255,0.8);
+
+.card-header {
+  color: yellow;
+}
+
+.text-main {
+  color: #e5ff00!important;
+}
+
+.h2{
+  color: yellow;
+}
+.card{
+  color: yellow;
+}
+
+.dark-text {
+  color: rgb(67, 68, 86);
+}
+  
+.dark-text-light {
+  color: rgb(128, 145, 171);
+}
+  
+.light-text {
+  color: rgb(255, 255, 255);
+}
+
+.card-dark {
+  background: rgb(32, 42, 59) !important;
+}
+  
+.map-card{
+  height:350px;
+  max-height: 350px;
+}
+  
+.navbar {
+  background:rgb(115, 255, 0);
+  color:white !important;
+}
+  
+.navitem {
+  color:white !important;
 }
 
 .dropdown{
-    padding-top: 15px;
-    padding-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.container-fluid {
+  width: 90% !important;
 }
 
 .font-weight-700{
-    font-weight: 700;
+  font-weight: 700;
 }
-.custom-card{
-    border: 0 ;
-    box-shadow: 0px 2px 4px #53535373;
-    background-color: #d3d3d3c2 !important;
-}
+
 .card-body img {
-    width: 25px;
-    opacity :0.2;   
+  width: 25px;
+  opacity :0.2;   
 }
+
 .card-deck > .card:nth-child(2) .card-body > img{
-    width:20px;
+  width:20px;
 }
+
 @media (min-width:576px){
-    .custom-card-deck .card:last-child{
-        margin-right: 15px !important;
-    }
+  .custom-card-deck .card:last-child{
+      margin-right: 15px !important;
+  }
 }
-@media (max-width:768px){
-    .navbar-brand{
-        width:100%;
-        text-align: center;
-        font-size: 1.1rem;
-        white-space: normal;
-    }
-}
+
 @media (max-width:575px){
-    .mt-xs-4 {
-        margin-top: 2rem !important;
-    }
-    .mb-xs-4 {
-        margin-bottom: 2rem !important;
-    }
+  .mt-xs-4 {
+    margin-top: 2rem !important;
+  }
+  .mb-xs-4 {
+    margin-bottom: 2rem !important;
+  }
 }
-.text-primary {
-    color: #3949ab!important;
-}
- 
+
