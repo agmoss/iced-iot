@@ -3,6 +3,11 @@ body {
   background: rgb(23, 32, 46) !important;
 }
 
+.logo {
+  font-family: 'Vampiro One', cursive;
+  font-size: 25px !important;
+}
+
 .chart-container{
   background-color:rgb(32, 42, 59) 
 }
