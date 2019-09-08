@@ -1,7 +1,8 @@
 {
-  "name": "iot-dashboard",
+  "name": "iced-iot",
   "version": "0.1.0",
   "private": true,
+  "author":"Andrew Moss",
   "dependencies": {
     "apexcharts": "^3.8.5",
     "bootstrap": "^4.3.1",

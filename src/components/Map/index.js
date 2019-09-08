@@ -1,25 +1,23 @@
-// Step 1 - Including react
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-// Step 2 - Including the react-fusioncharts component
+//Including the react-fusioncharts component
 import ReactFC from 'react-fusioncharts';
 
-// Step 3 - Including the fusioncharts library
+//Including the fusioncharts library
 import FusionCharts from 'fusioncharts';
 
-// Step 4 - Including the map renderer
+//Including the map renderer
 import FusionMaps from 'fusioncharts/fusioncharts.maps';
 
-// Step 5 - Including the map definition file
+//Including the map definition file
 import World from 'fusioncharts/maps/fusioncharts.world';
 
-// Step 6 - Including the theme as fusion
+//Including the theme as fusion
 import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 
 import Card from 'react-bootstrap/Card';
 
-// Step 7 - Adding the map as dependency to the core fusioncharts
+//Adding the map as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, FusionMaps, World, FusionTheme);
 
 

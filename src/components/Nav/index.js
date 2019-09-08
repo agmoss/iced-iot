@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from 'react-bootstrap';
+import { Navbar, NavDropdown, Nav } from 'react-bootstrap';
 
 class Navig extends React.Component {
     constructor(props) {
@@ -14,7 +14,7 @@ class Navig extends React.Component {
                 
                 <a class="navbar-brand" href="/">
                     <span className="logo">Iced IoT </span>
-                    <img src={process.env.PUBLIC_URL + '/ice-tea.png'}></img>
+                    <img src={process.env.PUBLIC_URL + '/ice-tea.png'} alt="ice-tea"></img>
                 </a>
                 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />

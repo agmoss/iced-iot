@@ -30,7 +30,7 @@ class About extends Component {
                             <div class="col-12">
                                 <div class="text-center">
                                     <div>
-                                    <img src={process.env.PUBLIC_URL + '/systems-architecture.png'} alt="Sytem Architecture"/>
+                                    <img className="architecture"src={process.env.PUBLIC_URL + '/system.png'} alt="Sytems Architecture"/>
                                     </div>
                                 </div>
                             </div>
