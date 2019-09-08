@@ -17,7 +17,7 @@ import World from 'fusioncharts/maps/fusioncharts.world';
 // Step 6 - Including the theme as fusion
 import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
 
 // Step 7 - Adding the map as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, FusionMaps, World, FusionTheme);
@@ -43,11 +43,11 @@ class Map extends React.Component {
                     // Map Configuration
                     "chart": {
                         "theme": "fusion",
-                        "markerBgColor": "#FF0000",
+                        "markerBgColor": "#eaff00",
                         "markerRadius": "10",
                         "showMarkerLabels": "1",
                         "entityFillHoverColor": "#E5E5E9",
-                        "bgcolor": "#3366ff",
+                        "bgcolor": "#eaff00",
                         "bgalpha": "0"
                     },
                     "colorrange": {
@@ -78,11 +78,11 @@ class Map extends React.Component {
                     // Map Configuration
                     "chart": {
                         "theme": "fusion",
-                        "markerBgColor": "#FF0000",
+                        "markerBgColor": "#eaff00",
                         "markerRadius": "10",
                         "showMarkerLabels": "1",
                         "entityFillHoverColor": "#E5E5E9",
-                        "bgcolor": "#3366ff",
+                        "bgcolor": "#eaff00",
                         "bgalpha": "0"
                     },
                     "colorrange": {

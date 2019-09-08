@@ -71,12 +71,12 @@ body {
 }
 
 .card-body img {
-  width: 25px;
-  opacity :0.2;   
+  width: 45px;  
 }
 
-.card-deck > .card:nth-child(2) .card-body > img{
-  width:20px;
+
+.left-space{
+  margin-left: 40px !important;
 }
 
 @media (min-width:576px){
@@ -84,13 +84,20 @@ body {
       margin-right: 15px !important;
   }
 }
-
+@media (max-width:768px){
+  .navbar-brand{
+      width:100%;
+      text-align: center;
+      font-size: 1.1rem;
+      white-space: normal;
+  }
+}
 @media (max-width:575px){
   .mt-xs-4 {
-    margin-top: 2rem !important;
+      margin-top: 2rem !important;
   }
   .mb-xs-4 {
-    margin-bottom: 2rem !important;
+      margin-bottom: 2rem !important;
   }
 }
 
