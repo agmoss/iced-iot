@@ -25,7 +25,7 @@ class KpiCard extends Component {
     render() {
         return (
             <div className="card card-dark">
-                <div className="card-body">
+                <div className="card-body left-space">
                     <img src={this.props.src} alt={this.props.src} className="img-responsive float-right" />
                     <h6 className="card-title mb-4">{this.props.header} </h6>
                     {this.createPairs(this.props.data)}

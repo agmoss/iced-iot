@@ -14,10 +14,9 @@ class StatusCard extends Component {
 
             <div className="card card-dark">
                 <div className="card-body">
+                <div className="img-responsive float-right"><status-indicator positive pulse></status-indicator>  </div>
                     <h2 className="card-title mb-4">{this.props.facility} </h2>
-                    <status-indicator positive pulse></status-indicator>
-                    <h6>Energy, Wind, and Tank Monitoring</h6>
-
+                    <h6>Energy, Wind, and Tank IoT Monitoring</h6>
                 </div>
             </div>
         )

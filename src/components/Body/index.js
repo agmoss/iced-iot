@@ -206,7 +206,7 @@ class Body extends Component {
                     <Col xs={12} className="mb-3">
 
                         <div className="text-left">
-                            <DropdownButton id="dropdown-basic-button dropdown-menu-right pull-right" title=" Facility ">
+                            <DropdownButton  variant="success" id="dropdown-basic-button dropdown-menu-right pull-right" title=" Facility ">
                                 <Dropdown.Item onClick={this.selectFacility}>facility_01</Dropdown.Item>
                                 <Dropdown.Item onClick={this.selectFacility}>facility_02</Dropdown.Item>
                             </DropdownButton>
@@ -220,10 +220,10 @@ class Body extends Component {
 
                     <Col xs={12} className="mb-3 align-items-stretch">
 
-                        <div className="card-deck mb-5 mb-xs-4">
-                            <KpiCard header="Wind" src={''} data={[{ "label": "(mPh)", "value": this.state.wind.mph }, { "label": "(Direction)", "value": this.state.wind.direction }]} alt="-" />
-                            <KpiCard header="Energy" src={''} data={[{ "label": "(watts)", "value": this.state.energy }, { "label": "(State)", "value": "Normal" }]} alt="-" label1="(Watts)" value1={this.state.energy} />
-                            <KpiCard header="Tank" src={''} data={[{ "label": "(Liters)", "value": this.state.tank.liters }, { "label": "(ph)", "value": this.state.tank.pH }]} alt="-" />
+                        <div className="card-deck custom-card-deck mb-5 mb-5 mb-xs-4">
+                            <KpiCard header="Wind" src={process.env.PUBLIC_URL + '/windsock.png'} data={[{ "label": "(mPh)", "value": this.state.wind.mph }, { "label": "(Direction)", "value": this.state.wind.direction }]} alt="-" />
+                            <KpiCard header="Energy" src={process.env.PUBLIC_URL + '/logo192.png'} data={[{ "label": "(watts)", "value": this.state.energy }, { "label": "(State)", "value": "Normal" }]} alt="-" label1="(Watts)" value1={this.state.energy} />
+                            <KpiCard header="Tank" src={process.env.PUBLIC_URL + '/water-tank.png'} data={[{ "label": "(Liters)", "value": this.state.tank.liters }, { "label": "(ph)", "value": this.state.tank.pH }]} alt="-" />
                             <StatusCard facility={this.state.currentFacility} />
                         </div>
 
@@ -236,7 +236,7 @@ class Body extends Component {
 
                     <Col lg={9} xs={12} className="mb-3">
 
-                        <div className="card card-dark mb-5 mb-xs-4">
+                        <div className="card card-dark mb-xs-4">
                             <div className="card-body">
                                 <div id="chartReal">
                                     <ReactApexChart options={this.state.options} series={this.state.series} type="line" height="350" />
