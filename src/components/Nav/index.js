@@ -11,17 +11,16 @@ class Navig extends React.Component {
         return (
 
             <Navbar collapseOnSelect expand="lg">
-                <Navbar.Brand className="logo">Dam</Navbar.Brand>
+                <Navbar.Brand className="logo" href="/">Dam</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    {/* <Nav className="mr-auto">
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                    <Nav className="mr-auto">
+                        
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">Dank memes</Nav.Link>
-                    </Nav> */}
+                        <Nav.Link className="logo-small" href="/about">About</Nav.Link>
+                        <Nav.Link className="logo-small" href="/source">Source</Nav.Link>
+                    </Nav>
                 </Navbar.Collapse>
             </Navbar>
 

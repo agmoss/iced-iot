@@ -104,7 +104,6 @@ class Body extends Component {
             dropdownOpen: !this.state.dropdownOpen,
             currentFacility: event.target.innerText
         }, () => {
-
             // Re-render the chart
             clearInterval(this.chartInterval);
             this.energyLineChart();
@@ -138,6 +137,7 @@ class Body extends Component {
     }
 
 
+    // Global for clearing the interval on re-render
     chartInterval = null;
     startUpdatingData() {
 
@@ -200,42 +200,28 @@ class Body extends Component {
         return (
 
             <Container fluid>
-
                 <Row>
-
                     <Col xs={12} className="mb-3">
-
                         <div className="text-left">
-                            <DropdownButton  variant="success" id="dropdown-basic-button dropdown-menu-right pull-right" title=" Facility ">
+                            <DropdownButton  variant="secondary" id="dropdown-basic-button dropdown-menu-right pull-right" title=" Facility ">
                                 <Dropdown.Item onClick={this.selectFacility}>facility_01</Dropdown.Item>
                                 <Dropdown.Item onClick={this.selectFacility}>facility_02</Dropdown.Item>
                             </DropdownButton>
                         </div>
-
                     </Col>
-
                 </Row>
-
                 <Row>
-
                     <Col xs={12} className="mb-3 align-items-stretch">
-
                         <div className="card-deck custom-card-deck mb-5 mb-5 mb-xs-4">
                             <KpiCard header="Wind" src={process.env.PUBLIC_URL + '/windsock.png'} data={[{ "label": "(mPh)", "value": this.state.wind.mph }, { "label": "(Direction)", "value": this.state.wind.direction }]} alt="-" />
                             <KpiCard header="Energy" src={process.env.PUBLIC_URL + '/logo192.png'} data={[{ "label": "(watts)", "value": this.state.energy }, { "label": "(State)", "value": "Normal" }]} alt="-" label1="(Watts)" value1={this.state.energy} />
                             <KpiCard header="Tank" src={process.env.PUBLIC_URL + '/water-tank.png'} data={[{ "label": "(Liters)", "value": this.state.tank.liters }, { "label": "(ph)", "value": this.state.tank.pH }]} alt="-" />
                             <StatusCard facility={this.state.currentFacility} />
                         </div>
-
                     </Col>
-                    
                 </Row>
-
-
                 <Row>
-
                     <Col lg={9} xs={12} className="mb-3">
-
                         <div className="card card-dark mb-xs-4">
                             <div className="card-body">
                                 <div id="chartReal">
@@ -243,18 +229,13 @@ class Body extends Component {
                                 </div>
                             </div>
                         </div>
-
                     </Col>
-
                     <Col lg={3} xs={12}>
-
                         <Map facility={this.state.currentFacility} />
-
                     </Col>
-
                 </Row>
-
             </Container>
+            
         )
     }
 }

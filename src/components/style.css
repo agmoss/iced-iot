@@ -8,16 +8,18 @@ body {
   font-size: 25px !important;
 }
 
+.logo-small{
+  font-family: 'Vampiro One', cursive;
+  font-size: 16px !important;
+  color: white;
+}
+
 .chart-container{
   background-color:rgb(32, 42, 59) 
 }
 
 .card-header {
   color: yellow;
-}
-
-.text-main {
-  color: #e5ff00!important;
 }
 
 .h2{
@@ -29,6 +31,10 @@ body {
 
 .dark-text {
   color: rgb(67, 68, 86);
+}
+
+.card-text .text-muted{
+  color: rgb(255, 255, 255) !important;
 }
   
 .dark-text-light {
@@ -49,8 +55,13 @@ body {
 }
   
 .navbar {
-  background:rgb(115, 255, 0);
+  
+  background:linear-gradient(to right, red , yellow);
   color:white !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color:black !important;
 }
   
 .navitem {
