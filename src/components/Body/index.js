@@ -147,7 +147,7 @@ class Body extends Component {
             this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/energy?last=true', 'energy');
             this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/tank?last=true', 'tank');
 
-        }, 2000);
+        }, 10000);
 
         this.chartInterval = setInterval(() => {
 
@@ -156,7 +156,7 @@ class Body extends Component {
             var oneHourAgo = now.getTime().toString();
             this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/energy/gte/' + oneHourAgo, 'energyTs');
 
-        }, 30000);
+        }, 10000);
     }
 
 
