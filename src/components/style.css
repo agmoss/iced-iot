@@ -3,16 +3,38 @@ body {
   background: rgb(23, 32, 46) !important;
 }
 
+nav a img {
+  width: 40px; 
+}
+
 .logo {
-  font-family: 'Vampiro One', cursive;
+  font-family: 'Cantarell', sans-serif;
   font-size: 25px !important;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.logo-header {
+  font-family: 'Cantarell', sans-serif;
+  font-size: 75px !important;
+  color: white;
+  padding: 60px;
+  font-weight: 900;
+  font-style: italic;
 }
 
 .logo-small{
-  font-family: 'Vampiro One', cursive;
+  font-family: 'Cantarell', sans-serif;
   font-size: 16px !important;
   color: white;
+  font-weight: 900;
+  font-style: italic;
 }
+
+.dropdown-menu .dropdown-item{ 
+  font-weight: initial;
+  font-style: initial;
+ }
 
 .chart-container{
   background-color:rgb(32, 42, 59) 
@@ -111,4 +133,3 @@ body {
       margin-bottom: 2rem !important;
   }
 }
-

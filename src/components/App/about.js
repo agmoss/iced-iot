@@ -4,8 +4,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import '../style.css';
 
 import Navig from '../Nav';
-import Container from 'react-bootstrap/Container';
-
 
 class About extends Component {
 
@@ -21,7 +19,18 @@ class About extends Component {
                             <div class="col-12">
                                 <div class="text-center">
                                     <div>
-                                        <p>TODO: Add info about the project and trip</p>
+                                    <h1 className = "logo-header">Sytems Architecture</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="text-center">
+                                    <div>
+                                    <img src={process.env.PUBLIC_URL + '/systems-architecture.png'} alt="Sytem Architecture"/>
                                     </div>
                                 </div>
                             </div>
