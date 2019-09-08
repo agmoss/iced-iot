@@ -3,10 +3,38 @@ body {
   background: rgb(23, 32, 46) !important;
 }
 
-.logo {
-  font-family: 'Vampiro One', cursive;
-  font-size: 25px !important;
+nav a img {
+  width: 40px; 
 }
+
+.logo {
+  font-family: 'Cantarell', sans-serif;
+  font-size: 25px !important;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.logo-header {
+  font-family: 'Cantarell', sans-serif;
+  font-size: 60px !important;
+  color: white;
+  padding: 40px;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.logo-small{
+  font-family: 'Cantarell', sans-serif;
+  font-size: 16px !important;
+  color: white;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.dropdown-menu .dropdown-item{ 
+  font-weight: initial;
+  font-style: initial;
+ }
 
 .chart-container{
   background-color:rgb(32, 42, 59) 
@@ -14,10 +42,6 @@ body {
 
 .card-header {
   color: yellow;
-}
-
-.text-main {
-  color: #e5ff00!important;
 }
 
 .h2{
@@ -29,6 +53,10 @@ body {
 
 .dark-text {
   color: rgb(67, 68, 86);
+}
+
+.card-text .text-muted{
+  color: rgb(255, 255, 255) !important;
 }
   
 .dark-text-light {
@@ -49,8 +77,11 @@ body {
 }
   
 .navbar {
-  background:rgb(115, 255, 0);
-  color:white !important;
+  background:linear-gradient(to right, red , yellow);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color:black !important;
 }
   
 .navitem {
@@ -72,6 +103,10 @@ body {
 
 .card-body img {
   width: 45px;  
+}
+
+.architecture{
+  width: 80%;
 }
 
 
@@ -100,4 +135,3 @@ body {
       margin-bottom: 2rem !important;
   }
 }
-

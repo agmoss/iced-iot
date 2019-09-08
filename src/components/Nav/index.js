@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from 'react-bootstrap';
+import { Navbar, NavDropdown, Nav } from 'react-bootstrap';
 
 class Navig extends React.Component {
     constructor(props) {
@@ -11,17 +11,29 @@ class Navig extends React.Component {
         return (
 
             <Navbar collapseOnSelect expand="lg">
-                <Navbar.Brand className="logo">Dam</Navbar.Brand>
+                
+                <a class="navbar-brand" href="/">
+                    <span className="logo">Iced IoT </span>
+                    <img src={process.env.PUBLIC_URL + '/ice-tea.png'} alt="ice-tea"></img>
+                </a>
+                
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    {/* <Nav className="mr-auto">
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                    <Nav className="mr-auto">
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">Dank memes</Nav.Link>
-                    </Nav> */}
+                        <NavDropdown title="Source" drop="left" className="logo-small">
+                            <NavDropdown.Item href="https://github.com/agmoss/iot-simulation">IoT Devices</NavDropdown.Item>
+                            <NavDropdown.Item href="https://github.com/agmoss/IotHub_EventHub_MongoDB">Azure Function App</NavDropdown.Item>
+                            <NavDropdown.Item href="https://github.com/agmoss/iotsimbackend">Express API's</NavDropdown.Item>
+                            <NavDropdown.Item href="https://github.com/agmoss/iot-dashboard">React.js Web App</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="https://github.com/agmoss">Profile</NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                    <Nav>
+                        <Nav.Link className="logo-small" href="/about">About</Nav.Link>
+                    </Nav>
                 </Navbar.Collapse>
             </Navbar>
 

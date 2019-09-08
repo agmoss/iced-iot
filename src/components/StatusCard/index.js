@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Card, { CardSubtitle } from 'react-bootstrap/Card'
 import 'status-indicator/styles.css'
 import '../dot.css'
 
