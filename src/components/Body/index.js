@@ -1,19 +1,28 @@
 import React, { Component } from 'react';
-import Map from '../Map';
+
+// Chart Libraries
 import ReactApexChart from 'react-apexcharts';
 import ApexCharts from 'apexcharts';
+
+// Components
+import Map from '../Map';
+import StatusCard from '../StatusCard';
+import KpiCard from '../kpiCard';
+
+// Functions
+import timeSeries from '../../functions/timeSeries';
+
+// Bootstrap
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
-import KpiCard from '../kpiCard';
 
-import StatusCard from '../StatusCard';
-import timeSeries from '../../functions/timeSeries';
-
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+// Loading spinner
+import LoadingOverlay from 'react-loading-overlay';
 
 
 var data = [];
@@ -25,6 +34,7 @@ class Body extends Component {
         this.BASE_URL = 'https://iotsimbackend.azurewebsites.net/api/';
         this.chartRef = null;
         this.state = {
+            loading: true,
             hourLag: 1,
             dropdownOpen: false,
             currentFacility: "facility_01",
@@ -71,16 +81,10 @@ class Body extends Component {
                     type: 'datetime'
                 },
                 tooltip: {
-                    enabled: true, //TODO: Fix this
+                    enabled: true,
                     followCursor: true,
                     theme: 'dark',
-                    fixed: {
-                        enabled: false,
-                        position: 'topRight',
-                        offsetX: 0,
-                        offsetY: 0,
-                    },
-                }
+                },
             },
             series: [{
                 data: data
@@ -106,13 +110,17 @@ class Body extends Component {
     }
 
     // Create the wattage time series chart
-    energyLineChart() {
+    async energyLineChart() {
+
+        this.setState({ loading: true })
 
         clearInterval(this.chartInterval);
         var now = new Date();
         now.setHours(now.getHours() - this.state.hourLag);
         var oneHourAgo = now.getTime().toString();
-        this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/energy/gte/' + oneHourAgo, 'energyTs');
+        await this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/energy/gte/' + oneHourAgo, 'energyTs');
+
+        this.setState({ loading: false });
 
     }
 
@@ -156,39 +164,43 @@ class Body extends Component {
 
 
     getDataFor(conversion, prop) {
-        fetch(this.BASE_URL + conversion, {
-            mode: 'cors'
-        })
-            .then(res => res.json())
-            .then(d => {
-
-                if (prop === 'wind') {
-                    this.setState({
-                        [prop]: d.data
-                    });
-                }
-
-                if (prop === 'energy') {
-                    this.setState({
-                        [prop]: d.data.watts
-                    });
-                }
-
-                if (prop === 'tank') {
-                    this.setState({
-                        [prop]: d.data
-                    });
-                }
-
-                if (prop === 'energyTs') {
-                    var data = timeSeries(d);
-
-                    ApexCharts.exec('realtime', 'updateSeries', [{
-                        name: "Watts",
-                        data: data
-                    }])
-                }
+        return new Promise((resolve, reject) => {
+            fetch(this.BASE_URL + conversion, {
+                mode: 'cors'
             })
+                .then(res => res.json())
+                .then(d => {
+
+                    if (prop === 'wind') {
+                        this.setState({
+                            [prop]: d.data
+                        });
+                    }
+
+                    if (prop === 'energy') {
+                        this.setState({
+                            [prop]: d.data.watts
+                        });
+                    }
+
+                    if (prop === 'tank') {
+                        this.setState({
+                            [prop]: d.data
+                        });
+                    }
+
+                    if (prop === 'energyTs') {
+                        var data = timeSeries(d);
+
+                        ApexCharts.exec('realtime', 'updateSeries', [{
+                            name: "Watts",
+                            data: data
+                        }])
+                    }
+                }).then(() => {
+                    return resolve();
+                })
+        })
     }
 
     onHourClick = param => e => {
@@ -206,6 +218,16 @@ class Body extends Component {
         return (
 
             <Container fluid>
+
+                <LoadingOverlay
+                    active={this.state.loading}
+                    styles={{
+                        wrapper: {}
+                    }}
+                    spinner
+                    text='Loading ...'
+                ></LoadingOverlay>
+
                 <Row>
                     <Col xs={12} className="mb-3 mt-3">
                         <div className="text-left">
