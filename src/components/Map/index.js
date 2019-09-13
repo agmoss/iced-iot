@@ -22,8 +22,6 @@ import Card from 'react-bootstrap/Card';
 //Adding the map as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, FusionMaps, World, FusionTheme);
 
-
-
 class Map extends React.Component {
 
     constructor(props) {

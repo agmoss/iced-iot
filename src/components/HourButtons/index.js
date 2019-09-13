@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 
-// Chart Libraries
-import ReactApexChart from 'react-apexcharts';
-import ApexCharts from 'apexcharts';
-
-// Functions
-import timeSeries from '../../functions/timeSeries';
-
 // Bootstrap
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
