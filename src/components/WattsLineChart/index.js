@@ -17,6 +17,7 @@ class WattsLineChart extends Component {
         this.BASE_URL = 'https://iotsimbackend.azurewebsites.net/api/';
         this.chartRef = null;
         this.state = {
+            currentFacility:'facility_01',
             hourLag:1,
             energyTs: '-',
             options: {
@@ -73,7 +74,7 @@ class WattsLineChart extends Component {
         var now = new Date();
         now.setHours(now.getHours() - this.state.hourLag);
         var oneHourAgo = now.getTime().toString();
-        await this.getDataFor('/devices/facility/' + this.props.currentFacility + '/type/energy/gte/' + oneHourAgo, 'energyTs');
+        await this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/energy/gte/' + oneHourAgo, 'energyTs');
 
     }
 
@@ -99,7 +100,7 @@ class WattsLineChart extends Component {
             var now = new Date();
             now.setHours(now.getHours() - this.state.hourLag);
             var oneHourAgo = now.getTime().toString();
-            this.getDataFor('/devices/facility/' + this.props.currentFacility + '/type/energy/gte/' + oneHourAgo, 'energyTs');
+            this.getDataFor('/devices/facility/' + this.state.currentFacility + '/type/energy/gte/' + oneHourAgo, 'energyTs');
 
         }, 10000);
     }
@@ -127,25 +128,25 @@ class WattsLineChart extends Component {
         })
     }
 
-    componentWillUpdate(nextProps,nextState){
+    // componentWillUpdate(nextProps,nextState){
         
-        if(nextState.hourLag){
-            this.energyLineChart();
-            this.startUpdatingData();
-        }
-
-    }
+    //     if(nextState.hourLag){
+    //         this.energyLineChart();
+    //         this.startUpdatingData();
+    //     }
+    // }
 
     async componentWillReceiveProps(nextProps) {
         // Prevent unessary re-render
-        if (nextProps.hourLag!==this.state.hourLag){
+        if (nextProps.hourLag!==this.state.hourLag || nextProps.currentFacility!==this.state.currentFacility){
 
-            this.setState({ hourLag: nextProps.hourLag});
+            this.setState({ hourLag: nextProps.hourLag, currentFacility:nextProps.currentFacility}, async ()=>{
 
-            this.props.updateLoading(true)
-            await this.energyLineChart();
-            this.startUpdatingData();
-            this.props.updateLoading(false)
+                this.props.updateLoading(true);
+                await this.energyLineChart();
+                this.startUpdatingData();
+                this.props.updateLoading(false);
+            });
         }
     }
 
