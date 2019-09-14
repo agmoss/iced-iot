@@ -4,11 +4,15 @@ import '../style.css';
 
 // Components
 import Navig from '../Nav';
-import KpiCards from '../kpiCards';
+//import KpiCards from '../kpiCards';
 import FacilitySelector from '../FacilitySelector';
 import WattsLineChart from '../WattsLineChart';
 import Map from '../Map';
 import HourButtons from '../HourButtons';
+
+// Containers 
+import KpiCardsContainer from '../../containers/KpiCards';
+import WattsLineChartContainer from '../../containers/WattsLineChart';
 
 // Bootstrap
 import "bootstrap/dist/css/bootstrap.css";
@@ -71,10 +75,10 @@ class App extends Component {
 					></LoadingOverlay>
 
 					<FacilitySelector selectFacility={this.selectFacility.bind(this)}></FacilitySelector>
-					<KpiCards currentFacility={this.state.currentFacility}></KpiCards>
+					<KpiCardsContainer currentFacility={this.state.currentFacility}></KpiCardsContainer>
 					<HourButtons onHourClick={this.onHourClick.bind(this)}></HourButtons>
 					<Row>
-						<WattsLineChart currentFacility={this.state.currentFacility} hourLag={this.state.hourLag} updateLoading={this.updateLoading} ></WattsLineChart> 
+						<WattsLineChartContainer currentFacility={this.state.currentFacility} hourLag={this.state.hourLag} updateLoading={this.updateLoading} ></WattsLineChartContainer> 
 						<Map facility={this.state.currentFacility} />
 					</Row>
 

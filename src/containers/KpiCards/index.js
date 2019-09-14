@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 
-// Components
-import StatusCard from '../StatusCard';
-import KpiCard from '../kpiCard';
+// Component
+import KpiCards from '../../components/KpiCards';
 
-// Bootstrap
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
-class KpiCards extends Component {
+class KpiCardsContainer extends Component {
     constructor(props) {
         super(props);
         this.BASE_URL = 'https://iotsimbackend.azurewebsites.net/api/';
@@ -75,23 +70,11 @@ class KpiCards extends Component {
         })
     }
 
-
     render() {
         return (
-
-            <Row>
-                <Col xs={12} className="mb-3 mb-xs-4 align-items-stretch">
-                    <div className="card-deck custom-card-deck ">
-                        <KpiCard header="Wind" src={process.env.PUBLIC_URL + '/windsock.png'} data={[{ "label": "(mPh)", "value": this.state.wind.mph }, { "label": "(Direction)", "value": this.state.wind.direction }]} alt="-" />
-                        <KpiCard header="Energy" src={process.env.PUBLIC_URL + '/logo192.png'} data={[{ "label": "(watts)", "value": this.state.energy }, { "label": "(State)", "value": "Normal" }]} alt="-" label1="(Watts)" value1={this.state.energy} />
-                        <KpiCard header="Tank" src={process.env.PUBLIC_URL + '/water-tank.png'} data={[{ "label": "(Liters)", "value": this.state.tank.liters }, { "label": "(ph)", "value": this.state.tank.pH }]} alt="-" />
-                        <StatusCard facility={this.props.currentFacility} />
-                    </div>
-                </Col>
-            </Row>
-
+            React.createElement(KpiCards,{wind: this.state.wind, energy:this.state.energy, tank:this.state.tank, currentFacility:this.props.currentFacility})
         )
     }
 }
 
-export default KpiCards;
+export default KpiCardsContainer;
