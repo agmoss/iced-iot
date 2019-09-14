@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+// Bootstrap
 import { Navbar, NavDropdown, Nav } from 'react-bootstrap';
 
-class Navig extends React.Component {
+/**
+ * **Navig Class**
+ *
+ * Navigation Bar
+ * 
+ * @constructor
+ * @param {Object} props - properties from parent
+ */
+class Navig extends Component {
     constructor(props) {
         super(props);
     }

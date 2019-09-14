@@ -15,12 +15,21 @@ import World from 'fusioncharts/maps/fusioncharts.world';
 //Including the theme as fusion
 import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 
+// Bootstrap
+import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
 //Adding the map as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, FusionMaps, World, FusionTheme);
 
-
+/**
+ * **Map Class**
+ *
+ * Map for displaying the geographic location of IoT facilities
+ * 
+ * @constructor
+ * @param {Object} props - properties from parent
+ */
 class Map extends React.Component {
 
     constructor(props) {
@@ -113,12 +122,15 @@ class Map extends React.Component {
 
         return (
 
-            <Card className="card-dark mb-5 mb-xs-4">
-                <Card.Header>Facility Location</Card.Header>
-                <Card.Body>
-                    <ReactFC {...configs} />
-                </Card.Body>
-            </Card>
+            <Col lg={3} xs={12}>
+                <Card className="card-dark mb-5 mb-xs-4">
+                    <Card.Header>Facility Location</Card.Header>
+                    <Card.Body>
+                        <ReactFC {...configs} />
+                    </Card.Body>
+                </Card>
+            </Col>
+
         );
 
     }
