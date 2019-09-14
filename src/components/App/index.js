@@ -4,9 +4,7 @@ import '../style.css';
 
 // Components
 import Navig from '../Nav';
-//import KpiCards from '../kpiCards';
 import FacilitySelector from '../FacilitySelector';
-import WattsLineChart from '../WattsLineChart';
 import Map from '../Map';
 import HourButtons from '../HourButtons';
 
@@ -22,11 +20,19 @@ import Row from 'react-bootstrap/Row';
 // Loading spinner
 import LoadingOverlay from 'react-loading-overlay';
 
+/**
+ * **App Class**
+ *
+ * Main
+ * 
+ */
 class App extends Component {
 
 	constructor(props) {
 		super(props);
+		/** IoT facility selection DDL */
 		this.selectFacility = this.selectFacility.bind(this);
+		/** hourLag button click  */
 		this.onHourClick = this.onHourClick.bind(this);
 		this.state = {
 			loading: true,
@@ -48,10 +54,10 @@ class App extends Component {
 		})
 	}
 
-	updateLoading = (loadingStatus) =>{
+	updateLoading = (loadingStatus) => {
 
 		this.setState({
-			loading:loadingStatus
+			loading: loadingStatus
 		})
 
 	}
@@ -65,6 +71,7 @@ class App extends Component {
 				<Navig />
 				<Container fluid>
 
+					{/* Loading Spinner */}
 					<LoadingOverlay
 						active={this.state.loading}
 						styles={{
@@ -74,11 +81,12 @@ class App extends Component {
 						text='Loading ...'
 					></LoadingOverlay>
 
+					{/* App Content */}
 					<FacilitySelector selectFacility={this.selectFacility.bind(this)}></FacilitySelector>
 					<KpiCardsContainer currentFacility={this.state.currentFacility}></KpiCardsContainer>
 					<HourButtons onHourClick={this.onHourClick.bind(this)}></HourButtons>
 					<Row>
-						<WattsLineChartContainer currentFacility={this.state.currentFacility} hourLag={this.state.hourLag} updateLoading={this.updateLoading} ></WattsLineChartContainer> 
+						<WattsLineChartContainer currentFacility={this.state.currentFacility} hourLag={this.state.hourLag} updateLoading={this.updateLoading} ></WattsLineChartContainer>
 						<Map facility={this.state.currentFacility} />
 					</Row>
 

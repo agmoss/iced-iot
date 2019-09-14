@@ -8,6 +8,16 @@ import KpiCard from '../KpiCard';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+/**
+ * KpICards Class.
+ *
+ * Presentation component
+ * 
+ * Displays key info on IoT devices
+ * 
+ * @constructor
+ * @param {Object} props - properties from parent
+ */
 class KpiCards extends Component {
     constructor(props) {
         super(props);

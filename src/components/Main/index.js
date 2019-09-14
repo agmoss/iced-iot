@@ -4,7 +4,11 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import App from '../../components/App';
 import about from '../../components/App/about';
 
-
+/**
+ * **Main Class**
+ *
+ * For page routing
+ */
 const Main = props => (
     <BrowserRouter>
         <Switch>

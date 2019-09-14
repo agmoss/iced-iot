@@ -1,6 +1,8 @@
 /**
- * Convert object array into time series data.
+ * **Convert object array into time series data.**
  *
+ * @param {Array} data - Object array
+ * @return {Array} Time series data set
  */
 function timeSeries(data){
 

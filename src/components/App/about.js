@@ -5,6 +5,12 @@ import '../style.css';
 
 import Navig from '../Nav';
 
+/**
+ * **About Class**
+ *
+ * Render the "About" page
+ *
+ */
 class About extends Component {
 
     render() {

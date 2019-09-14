@@ -22,6 +22,14 @@ import Card from 'react-bootstrap/Card';
 //Adding the map as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, FusionMaps, World, FusionTheme);
 
+/**
+ * **Map Class**
+ *
+ * Map for displaying the geographic location of IoT facilities
+ * 
+ * @constructor
+ * @param {Object} props - properties from parent
+ */
 class Map extends React.Component {
 
     constructor(props) {

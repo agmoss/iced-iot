@@ -3,10 +3,18 @@ import React, { Component } from 'react';
 // Component
 import KpiCards from '../../components/KpiCards';
 
+/**
+ * KpiCardsContainer.
+ *
+ * @constructor
+ * @param {Object} props - properties from component
+ */
 class KpiCardsContainer extends Component {
     constructor(props) {
         super(props);
+        /** API Location */
         this.BASE_URL = 'https://iotsimbackend.azurewebsites.net/api/';
+        /** Initial Data */
         this.state = {
             wind: '-',
             tank: '-',
@@ -26,6 +34,9 @@ class KpiCardsContainer extends Component {
 
     }
 
+    /**
+     * **Update the card data** 
+     */
     startUpdatingData() {
 
         setInterval(() => {
@@ -38,7 +49,15 @@ class KpiCardsContainer extends Component {
     }
 
 
-    getDataFor(conversion, prop) {
+    /**
+     * **Fetch data at specific endpoint and set state with resulting data.**
+     *
+     * @param {string} conversion - url extension ontop of base
+     * @param {string} value - state variable to get data for
+     * 
+     * @return {Promise}
+     */
+    getDataFor(conversion, value) {
         return new Promise((resolve, reject) => {
             fetch(this.BASE_URL + conversion, {
                 mode: 'cors'
@@ -46,30 +65,35 @@ class KpiCardsContainer extends Component {
                 .then(res => res.json())
                 .then(d => {
 
-                    if (prop === 'wind') {
+                    if (value === 'wind') {
                         this.setState({
-                            [prop]: d.data
+                            [value]: d.data
                         });
                     }
 
-                    if (prop === 'energy') {
+                    if (value === 'energy') {
                         this.setState({
-                            [prop]: d.data.watts
+                            [value]: d.data.watts
                         });
                     }
 
-                    if (prop === 'tank') {
+                    if (value === 'tank') {
                         this.setState({
-                            [prop]: d.data
+                            [value]: d.data
                         });
                     }
 
                 }).then(() => {
                     return resolve();
+                }).catch((error)=>{
+                    return reject(error);
                 })
         })
     }
 
+    /**
+     * **Render the presentation component**
+     */
     render() {
         return (
             React.createElement(KpiCards,{wind: this.state.wind, energy:this.state.energy, tank:this.state.tank, currentFacility:this.props.currentFacility})
