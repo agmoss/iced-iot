@@ -85,7 +85,7 @@ class KpiCardsContainer extends Component {
 
                 }).then(() => {
                     return resolve();
-                }).catch((error)=>{
+                }).catch((error) => {
                     return reject(error);
                 })
         })
@@ -96,7 +96,7 @@ class KpiCardsContainer extends Component {
      */
     render() {
         return (
-            React.createElement(KpiCards,{wind: this.state.wind, energy:this.state.energy, tank:this.state.tank, currentFacility:this.props.currentFacility})
+            React.createElement(KpiCards, { wind: this.state.wind, energy: this.state.energy, tank: this.state.tank, currentFacility: this.props.currentFacility })
         )
     }
 }

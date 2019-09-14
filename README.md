@@ -1,68 +1,90 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Iced IoT</h1>
 
-## Available Scripts
+<div align="center">
+      <img src="public/ice-tea-color.png" alt="Logo" style="width:100px;height:100px;" />
+</div>
+<div align="center">
+  <strong>IoT Device Monitoring and Orchestration</strong>
+</div>
+<div align="center">
+  A refreshing IoT platform!
+</div>
 
-In the project directory, you can run:
+<br />
 
-### `npm start`
+<div align="center">
+  <!-- Dependencies -->
+  <a>
+    <img src="https://img.shields.io/david/agmoss/iced-iot"
+      alt="Dependencies" />
+  </a>
+  <!-- Size -->
+  <a>
+    <img src="https://img.shields.io/github/languages/code-size/agmoss/iced-iot"
+      alt="Code Size" />
+  </a>
+  
+</div>
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<div align="center">
+  <h3>
+    <a href="https://icediot.com/">
+      WebApp
+    </a>
+    <span> | </span>
+    <a href="https://icediot.com/about">
+      About
+    </a>
+  </h3>
+</div>
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+<div align="center">
+  <sub>A personal project built by
+  <a href="https://github.com/agmoss">Andrew Moss</a>
+</div>
 
-### `npm test`
+## Table of Contents
+- [Features](#features)
+- [Design Philosophy](#design-philosophy)
+- [Platform Architecture](#platform-architecture)
+- [Associated Repo's](#associated-repo's)
+- [Tools](#tools)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Features
+- __RealTime Device Information:__ Accurate and up to date info and analytics
+- __Scalable:__ Built with Docker, CosmosDB, and NGINX for scalability and resilience
+- __Modular:__ Microservices architecture
+- __Current:__ Built with modern cloud tooling and design patterns
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Design Philosophy
+Iced IoT is a low overhead and robust IoT solution. The user can add facilities and devices of any variety on the IoT hub with minimal configuration. Added devices are instantly visible on the web app for tracking and analytics. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The platform is a series of microservices that can be independently scaled and maintained. All application services are dockerized and running as container instances in Azure. The entire platform is written in JavaScript with heavy use of non-blocking async code. The React front end is an MVC style app with presentation and container components. 
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Plaftorm Architecture
+<div align="center">
+  <a>
+    <img src="public/system-dark.png" alt="Architecture" />
+  </a> 
+</div>
+<br />
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Associated Repo's
+- [Express API's](https://github.com/agmoss/iotsimbackend)
+- [Azure Function App](https://github.com/agmoss/IotHub_EventHub_MongoDB)
+- [IoT Devices](https://github.com/agmoss/iot-simulation)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Tools
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [React](https://reactjs.org/)
+- [NGINX](https://www.nginx.com/)
+- [Docker](https://www.docker.com/)
+- [Azure IoT Hub](https://azure.microsoft.com/en-ca/services/iot-hub/)
+- [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/)
+- [CosmosDB](https://azure.microsoft.com/en-ca/services/cosmos-db/)
+- [Node.js](https://nodejs.org/en/)
+- [Express.js](https://expressjs.com/)
