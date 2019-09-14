@@ -1,7 +1,7 @@
 <h1 align="center">Iced IoT</h1>
 
 <div align="center">
-      <img src="public/ice-tea-color.png" alt="Logo" style="width:10px;height:10px;" />
+  <img src="public/ice-tea-color.png" alt="Logo" />
 </div>
 <div align="center">
   <strong>IoT Device Monitoring and Orchestration</strong>
