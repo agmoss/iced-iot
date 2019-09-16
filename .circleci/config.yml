@@ -1,0 +1,9 @@
+version: 2
+jobs:
+  build:
+    machine:
+      docker_layer_caching: false
+    steps:
+    - checkout
+    - run: docker-compose build
+    - run: docker-compose up
