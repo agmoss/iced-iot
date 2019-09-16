@@ -2,8 +2,6 @@ version: 2
 jobs:
   build:
     working_directory: ~/circlecibuild
-    environment:
-      IMAGE_NAME: m0sscr.azurecr.io/iotdashboard
     docker:
       - image: circleci/node:10.16.3
     steps:
@@ -28,6 +26,11 @@ jobs:
       - run: 
           name: Build Docker image 
           command: docker build -t $IMAGE_NAME:latest .
+      - run:
+          name: Push Docker Image
+          commands:
+              - docker login -u $DOCKER_USER -p $DOCKER_PASS $REGISTRY_NAME
+              - docker push $IMAGE_NAME:latest
 workflows:
   version: 2
   build-master:
