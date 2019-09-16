@@ -12,13 +12,8 @@ import Col from 'react-bootstrap/Col';
  *
  * Presentation component
  * 
- * @constructor
- * @param {Object} props - properties from parent
  */
 class WattsLineChart extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (

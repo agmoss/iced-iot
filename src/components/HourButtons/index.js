@@ -12,14 +12,8 @@ import ToggleButton from 'react-bootstrap/ToggleButton';
  *
  * Display toggle buttons for altering the hourLag prop
  * 
- * @constructor
- * @param {Object} props - properties from parent
  */
 class HourButtons extends Component {
-    constructor(props) {
-        /** onHourClick function passed from parent */
-        super(props);
-    }
 
     render() {
         return (

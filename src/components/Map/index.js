@@ -27,14 +27,8 @@ ReactFC.fcRoot(FusionCharts, FusionMaps, World, FusionTheme);
  *
  * Map for displaying the geographic location of IoT facilities
  * 
- * @constructor
- * @param {Object} props - properties from parent
  */
 class Map extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
 
     createConfigs() {
 

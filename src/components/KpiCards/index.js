@@ -15,13 +15,8 @@ import Col from 'react-bootstrap/Col';
  * 
  * Displays key info on IoT devices
  * 
- * @constructor
- * @param {Object} props - properties from parent
  */
 class KpiCards extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (

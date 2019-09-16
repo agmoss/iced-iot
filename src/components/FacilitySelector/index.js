@@ -11,14 +11,8 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
  *
  * DDL for changing the currentFacility/selectFacility prop
  * 
- * @constructor
- * @param {Object} props - properties from parent
  */
 class FacilitySelector extends Component {
-    constructor(props) {
-        /** currentFacility is passed here */
-        super(props);
-    }
 
     render() {
         return (

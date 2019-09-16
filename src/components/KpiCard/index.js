@@ -5,14 +5,8 @@ import React, { Component } from 'react';
  *
  * Construct each KpI card for the KpiCards render
  * 
- * @constructor
- * @param {Object} props - properties from parent
  */
 class KpiCard extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     /**
      * Construct a data/label pair for the card
      *
