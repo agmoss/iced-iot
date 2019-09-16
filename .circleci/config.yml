@@ -11,7 +11,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Install Node
-          command: apk add --update nodejs npm
+          command: apk add --update nodejs nodejs-npm
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
