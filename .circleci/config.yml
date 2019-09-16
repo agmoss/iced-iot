@@ -5,10 +5,13 @@ jobs:
     environment:
       IMAGE_NAME: m0sscr.azurecr.io/iotdashboard
     docker:
-      - image: circleci/node:10.16.3
+      - image: nginx:1.15.2-alpine
     steps:
       - checkout
       - setup_remote_docker
+      - run:
+          name: Install Node
+          command: apt-get update -yq && apt-get install curl gnupg -yq && curl -sL https://deb.nodesource.com/setup_10.x | bash && apt-get install nodejs -yq
       - run:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
