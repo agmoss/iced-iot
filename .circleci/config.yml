@@ -5,13 +5,13 @@ jobs:
     environment:
       IMAGE_NAME: m0sscr.azurecr.io/iotdashboard
     docker:
-      - image: nginx:1.15.2-alpine
+      - image: circleci/node:10.16.3
     steps:
       - checkout
       - setup_remote_docker
       - run:
-          name: Install Node
-          command: apk add --update nodejs nodejs-npm
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
       - restore_cache: # special step to restore the dependency cache
           # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
           key: dependency-cache-{{ checksum "package.json" }}
