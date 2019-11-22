@@ -4,7 +4,7 @@ body {
 }
 
 nav a img {
-  width: 40px; 
+  width: 40px;
 }
 
 .logo {
@@ -23,7 +23,7 @@ nav a img {
   font-style: italic;
 }
 
-.logo-small{
+.logo-small {
   font-family: 'Cantarell', sans-serif;
   font-size: 16px !important;
   color: white;
@@ -31,23 +31,24 @@ nav a img {
   font-style: italic;
 }
 
-.dropdown-menu .dropdown-item{ 
+.dropdown-menu .dropdown-item {
   font-weight: initial;
   font-style: initial;
- }
+}
 
-.chart-container{
-  background-color:rgb(32, 42, 59) 
+.chart-container {
+  background-color: rgb(32, 42, 59)
 }
 
 .card-header {
   color: yellow;
 }
 
-.h2{
+.h2 {
   color: yellow;
 }
-.card{
+
+.card {
   color: yellow;
 }
 
@@ -55,14 +56,14 @@ nav a img {
   color: rgb(67, 68, 86);
 }
 
-.card-text .text-muted{
+.card-text .text-muted {
   color: rgb(255, 255, 255) !important;
 }
-  
+
 .dark-text-light {
   color: rgb(128, 145, 171);
 }
-  
+
 .light-text {
   color: rgb(255, 255, 255);
 }
@@ -70,64 +71,67 @@ nav a img {
 .card-dark {
   background: rgb(32, 42, 59) !important;
 }
-  
-.map-card{
-  height:350px;
+
+.map-card {
+  height: 350px;
   max-height: 350px;
 }
-  
+
 .navbar {
-  background:linear-gradient(to right, red , yellow);
+  background: linear-gradient(to right, red, yellow);
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color:black !important;
+  color: black !important;
 }
-  
+
 .navitem {
-  color:white !important;
+  color: white !important;
 }
 
 .container-fluid {
   width: 90% !important;
 }
 
-.font-weight-700{
+.font-weight-700 {
   font-weight: 700;
 }
 
 .card-body img {
-  width: 45px;  
+  width: 45px;
 }
 
-.architecture{
+.architecture {
   width: 75%;
   padding-bottom: 75px;
 }
 
 
-.left-space{
+.left-space {
   margin-left: 40px !important;
 }
 
-@media (min-width:576px){
-  .custom-card-deck .card:last-child{
-      margin-right: 15px !important;
+@media (min-width:576px) {
+  .custom-card-deck .card:last-child {
+    margin-right: 15px !important;
   }
 }
-@media (max-width:768px){
-  .navbar-brand{
-      width:100%;
-      text-align: center;
-      font-size: 1.1rem;
-      white-space: normal;
+
+@media (max-width:768px) {
+  .navbar-brand {
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+    white-space: normal;
   }
 }
-@media (max-width:575px){
+
+@media (max-width:575px) {
   .mt-xs-4 {
-      margin-top: 2rem !important;
+    margin-top: 2rem !important;
   }
+
   .mb-xs-4 {
-      margin-bottom: 2rem !important;
+    margin-bottom: 2rem !important;
   }
 }
