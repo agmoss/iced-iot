@@ -19,7 +19,7 @@
     "react-scripts": "3.1.1",
     "react-simple-maps": "^0.12.1",
     "react-spinners": "^0.6.1",
-    "reactstrap": "^8.0.1",
+    "reactstrap": "^8.2.0",
     "status-indicator": "^1.0.9"
   },
   "scripts": {
