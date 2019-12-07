@@ -5,7 +5,7 @@
   "author": "Andrew Moss",
   "dependencies": {
     "apexcharts": "^3.8.5",
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^4.4.1",
     "fusioncharts": "^3.14.0-sr.1",
     "fusionmaps": "^3.14.0-sr.1",
     "react": "^16.9.0",
