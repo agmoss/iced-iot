@@ -4,16 +4,14 @@
  * @param {Array} data - Object array
  * @return {Array} Time series data set
  */
-function timeSeries(data){
+const timeSeries = (data) => {
+  const ret = [];
+  data.forEach((val) => {
+    const entry = [new Date(val.timestamp), val.data.watts];
+    ret.push(entry);
+  });
 
-    var ret = []; data.forEach(val =>{
-
-        var entry = [new Date(val.timestamp),val.data.watts];
-
-        ret.push(entry);
-    })
-
-    return ret;
-}
+  return ret;
+};
 
 export default timeSeries;
