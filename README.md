@@ -1,7 +1,7 @@
 <h1 align="center">Iced IoT</h1>
 
 <div align="center">
-  <img src="public/ice-tea-color.png" alt="Logo" width="100" height="100"/>
+  <img src="https://m0ss.blob.core.windows.net/media/ice-tea-color.png" alt="Logo" width="100" height="100"/>
 </div>
 <div align="center">
   <strong>IoT Device Monitoring and Orchestration</strong>
@@ -72,12 +72,12 @@
 ## Design Philosophy
 Iced IoT is a low overhead and robust IoT solution. The user can add facilities and devices of any variety on the IoT hub with minimal configuration. Added devices are instantly visible on the web app for tracking and analytics. 
 
-The platform is a series of microservices that can be independently scaled and maintained. The entire platform is written in JavaScript with heavy use of non-blocking async code. The React front end is an MVC style app with presentation and container components. All application services are dockerized and running as container instances in Azure. Continous integration and delivery is handled via CircleCI. 
+The platform is a series of microservices that can be independently scaled and maintained. The entire platform is written in JavaScript with heavy use of non-blocking async code. The React front end is an MVC style app with presentation and container components. All application services are dockerized and running as container instances in Azure. Continuous integration and delivery is handled via CircleCI. 
 
 ## Platform Architecture
 <div align="center">
   <a>
-    <img src="public/system-dark.png" alt="Architecture" />
+    <img src="https://m0ss.blob.core.windows.net/media/system-dark.png" alt="Architecture" />
   </a> 
 </div>
 <br />
@@ -96,4 +96,4 @@ The platform is a series of microservices that can be independently scaled and m
 - [CosmosDB](https://azure.microsoft.com/en-ca/services/cosmos-db/) - Globally distributed, multi-model database service
 - [Node.js](https://nodejs.org/en/) - JavaScript runtime
 - [Express.js](https://expressjs.com/) - Node.js web application framework
-- [CircleCI](https://circleci.com/) - Continous integration and delivery service
+- [CircleCI](https://circleci.com/) - Continuous integration and delivery service
