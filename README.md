@@ -13,17 +13,13 @@
 <br />
 
 <div align="center">
-  <!-- Dependencies -->
+  <!-- Language -->
   <a>
-    <img src="https://img.shields.io/david/agmoss/iced-iot" alt="Dependencies" />
+    <img src="https://img.shields.io/github/languages/top/agmoss/iced-iot" alt="Language" />
   </a>
   <!-- Size -->
   <a>
     <img src="https://img.shields.io/github/languages/code-size/agmoss/iced-iot" alt="Code Size" />
-  </a>
-  <!-- Language -->
-  <a>
-    <img src="https://img.shields.io/github/languages/top/agmoss/iced-iot" alt="Language" />
   </a>
   <!-- Website -->
   <a>
@@ -32,10 +28,6 @@
   <!-- Server -->
   <a>
     <img src="https://img.shields.io/website?down_color=red&down_message=down&label=server&up_color=orange&up_message=up&url=https%3A%2F%2Fiotsimbackend.azurewebsites.net%2Fapi%2Fdevices%2Ffacility%2Ffacility_01%2Ftype%2Ftank%3Flast%3Dtrue" alt="Server" />
-  </a>
-  <!--CircleCI Build -->
-  <a>
-    <img src="https://img.shields.io/circleci/build/github/agmoss/iced-iot/master" alt="Built Status">
   </a>
 </div>
 
