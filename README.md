@@ -57,37 +57,44 @@
 </div>
 
 ## Table of Contents
+
+- [Table of Contents](#table-of-contents)
 - [Features](#features)
 - [Design Philosophy](#design-philosophy)
 - [Platform Architecture](#platform-architecture)
-- [Associated Repo's](#associated-repo's)
+- [Associated Repo's](#associated-repos)
 - [Tools](#tools)
 
 ## Features
+
 - __RealTime Device Information:__ Accurate and up to date info and analytics
 - __Scalable:__ Built with Docker, CosmosDB, and NGINX for scalability and resilience
 - __Modular:__ Microservices architecture
 - __Current:__ Built with modern cloud tooling and design patterns
 
 ## Design Philosophy
-Iced IoT is a low overhead and robust IoT solution. The user can add facilities and devices of any variety on the IoT hub with minimal configuration. Added devices are instantly visible on the web app for tracking and analytics. 
 
-The platform is a series of microservices that can be independently scaled and maintained. The entire platform is written in JavaScript with heavy use of non-blocking async code. The React front end is an MVC style app with presentation and container components. All application services are dockerized and running as container instances in Azure. Continuous integration and delivery is handled via CircleCI. 
+Iced IoT is a low overhead and robust IoT solution. The user can add facilities and devices of any variety to the IoT hub with minimal configuration. Added devices are instantly visible on the web app for tracking and analytics.
+
+The platform is a series of microservices that can be independently scaled and maintained. The entire platform is written in JavaScript with heavy use of non-blocking async code. The React front end is an MVC-style app employing the presentation/container pattern. All application services are dockerized and running as container instances in Azure. Continuous integration and delivery are handled by CircleCI.
 
 ## Platform Architecture
+
 <div align="center">
   <a>
     <img src="https://m0ss.blob.core.windows.net/media/system-dark.png" alt="Architecture" />
-  </a> 
+  </a>
 </div>
 <br />
 
 ## Associated Repo's
+
 - [Express API's](https://github.com/agmoss/iotsimbackend) - Backend structure for the React frontent
 - [Azure Function App](https://github.com/agmoss/IotHub_EventHub_MongoDB) - Re-directing IoT hub messages into CosmosDB
 - [IoT Devices](https://github.com/agmoss/iot-simulation) - Simulated IoT devices and facilities
 
 ## Tools
+
 - [React](https://reactjs.org/) - Frontend Framework
 - [NGINX](https://www.nginx.com/) - Webserver
 - [Docker](https://www.docker.com/) - Container platform
